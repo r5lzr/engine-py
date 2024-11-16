@@ -26,6 +26,12 @@ function onDrop (source, target) {
   // illegal move
   if (move === null) return 'snapback'
 
+  $.post('/make_move', {'fen': game.fen()}, function(data) {
+    game.load(data.fen);
+
+    board.position(game.fen());
+  });
+
   updateStatus()
 }
 
