@@ -27,9 +27,11 @@ function onDrop (source, target) {
   if (move === null) return 'snapback'
 
   $.post('/make_move', {'fen': game.fen()}, function(data) {
-    game.load(data.fen);
+    game.move(data.best_move, { sloppy: true })
 
     board.position(game.fen());
+
+    updateStatus();
   });
 
   updateStatus()

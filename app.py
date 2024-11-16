@@ -26,7 +26,7 @@ def make_move():
 
     extractFen = board.fen()
 
-    return {"fen": extractFen}
+    return {"fen": extractFen, "best_move": str(result.move)}
 
 
 if __name__ == "__main__":
