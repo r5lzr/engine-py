@@ -4,7 +4,7 @@ import chess.engine
 
 
 async def main() -> None:
-    transport, engine = await chess.engine.popen_uci(r"august3.exe")
+    transport, engine = await chess.engine.popen_uci(r"./windows/august3.exe")
 
     board = chess.Board()
     while not board.is_game_over():
