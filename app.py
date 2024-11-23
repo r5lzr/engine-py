@@ -4,7 +4,7 @@ from flask import request
 import chess
 import chess.engine
 
-engine = chess.engine.SimpleEngine.popen_uci(r"./engine/unix/august3")
+engine = chess.engine.SimpleEngine.popen_uci(r"./engine/windows/august3")
 
 app = Flask(__name__)
 
