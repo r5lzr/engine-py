@@ -19,6 +19,19 @@
   user-select: none;
 }
 
+.square-55d63.possible-move::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
+
 .white-1e1d7 {
   background-color: #f0d9b5;
   color: #b58863;
