@@ -25,11 +25,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #6e543f;
   pointer-events: none;
+}
+
+.possible-capture {
+  background-color: #6e543f !important;
 }
 
 .white-1e1d7 {

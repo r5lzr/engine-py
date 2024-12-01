@@ -5,13 +5,17 @@ var $fen = $('#fen')
 var $pgn = $('#pgn')
 
 function removeMoveMarker () {
-  $('#board1 .square-55d63').removeClass('possible-move')
+  $('#board1 .square-55d63').removeClass('possible-move possible-capture')
 }
 
-function addMoveMarker (square) {
+function addMoveMarker (square, isCapture) {
   var $square = $('#board1 .square-' + square)
 
-  $square.addClass('possible-move')
+  if (isCapture) {
+    $square.addClass('possible-capture')
+  } else {
+    $square.addClass('possible-move')
+  }
 }
 
 function onDragStart (source, piece, position, orientation) {
@@ -32,7 +36,7 @@ function onDragStart (source, piece, position, orientation) {
 
   // highlight the possible squares for this piece
   for (var i = 0; i < moves.length; i++) {
-    addMoveMarker(moves[i].to)
+    addMoveMarker(moves[i].to, moves[i].captured !== undefined)
   }
 }
 
